@@ -1,0 +1,44 @@
+h2{
+    font-size: 1.5rem;
+}
+
+.wrapper{
+    background-color: #fefefa;
+    height: 50vh;
+    max-width: 60vw;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-wrapper{ 
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+}
+
+.input-wrapper{
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #1D1C1C;
+    height: 4rem;
+    overflow: hidden;
+}
+
+input{
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.submit-wrapper{
+    height: 3.5rem;
+    border-radius: 0.5rem;
+}
