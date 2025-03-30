@@ -1,4 +1,4 @@
-h2{
+.login-title{
     font-size: 1.5rem;
 }
 
@@ -30,7 +30,7 @@ h2{
     overflow: hidden;
 }
 
-input{
+.form-input{
     border: none;
     outline: none;
     font-size: 1.2rem;
