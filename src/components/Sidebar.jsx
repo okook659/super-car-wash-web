@@ -9,8 +9,8 @@ function Sidebar() {
     <div className={`${open ? "w-72" : "w-20"} 
       duration-300
       h-screen p-5 pt-8 bg-blue-900 relative`}>
-     
-      <i className={`fa-solid fa-circle-left text-white text-lg absolute cursor-pointer -right-3 top-9 w-7 border-2 border-dark-purple rounded-full ${!open && "rotate-180"}`} onClick={() => setOpen(!open)}></i>
+    
+      <i className={`fa-solid fa-circle-left fa-2x text-white text-lg absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple rounded-full ${!open && "rotate-180"}`} onClick={() => setOpen(!open)}></i>
       <div className='flex gap-x-4 items-center'>
         
         <i className={`cursor-pointer fa-solid text-white text-lg pl-1.5 fa-cloud-bolt duration-500 ${open && "rotate-[360deg]"}`}></i>

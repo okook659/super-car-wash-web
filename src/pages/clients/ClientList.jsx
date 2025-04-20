@@ -38,6 +38,7 @@ function ClientList() {
                                 <th className='p-3 font-semibold table-cell border b-1'>Désignation</th>
                                 <th className='p-3 font-semibold table-cell border b-1'>Téléphone</th>
                                 <th className='p-3 font-semibold table-cell border b-1'>Email</th>
+                                <th className='p-3 font-semibold table-cell border b-1'>Points de fidélité</th>
                                 <th className='p-3 font-semibold table-cell border b-1'>Actions</th>
                             </tr>
                         </thead>
@@ -48,6 +49,7 @@ function ClientList() {
                                     <td className='p-3 text-white table-cell text-center border b-1'> {client.nom} </td>
                                     <td className='p-3 text-white table-cell text-center border b-1'> {client.telephone} </td>
                                     <td className='p-3 text-white table-cell text-center border b-1'> {client.email} </td>
+                                    <td className='p-3 text-white table-cell text-center border b-1'> {client.points_fidelite} </td>
                                     <td className='p-3 text-white table-cell text-center border b-1'> 
                                         <div className="flex text-center justify-center">
                                             
