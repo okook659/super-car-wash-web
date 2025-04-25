@@ -10,6 +10,7 @@ function Login() {
       </div>
       <div className='w-1/2 content-center'>
         <form action="">
+      <h1>Connexion</h1>
           <div>
             <div>
               <label htmlFor="username"> Nom d'utilisateur

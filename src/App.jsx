@@ -11,7 +11,7 @@ function AppContent() {
   const location = useLocation();
 
   
-  const hideSidebarRoutes = ['/login', '/home'];
+  const hideSidebarRoutes = ['/login', '/'];
 
   const shouldHideSidebar = hideSidebarRoutes.includes(location.pathname);
 
@@ -21,7 +21,7 @@ function AppContent() {
       <div className='p-7 text-2xl font-semibold flex-1 h-screen'>
         <Routes>
           <Route path='/login' element={<Login />} />
-          <Route path='/home' element={<Home />} /> {/* si tu as une page Home */}
+          <Route path='/' element={<Home />} /> {/* si tu as une page Home */}
           <Route path='/clients' element={<ClientList />} />
           <Route path='/clients/create' element={<ClientCreate />} />
           <Route path='/clients/edit/:id' element={<ClientEdit />} />
