@@ -1,6 +1,7 @@
 import './App.css'
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Sidebar from './components/Sidebar.jsx'
+import ServiceList from './pages/services/service.jsx';
 import ClientList from './pages/clients/ClientList.jsx'
 import ClientCreate from './pages/clients/ClientCreate.jsx';
 import ClientEdit from './pages/clients/ClientEdit.jsx';
@@ -23,6 +24,7 @@ function AppContent() {
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<Home />} /> {/* si tu as une page Home */}
           <Route path='/clients' element={<ClientList />} />
+          <Route path='/services' element={<ServiceList />} />
           <Route path='/clients/create' element={<ClientCreate />} />
           <Route path='/clients/edit/:id' element={<ClientEdit />} />
         </Routes>
