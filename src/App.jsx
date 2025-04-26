@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Sidebar from './components/Sidebar.jsx'
-import ServiceList from './pages/services/service.jsx';
+import ServiceList from './pages/services/Service.jsx';
 import ClientList from './pages/clients/ClientList.jsx'
 import ClientCreate from './pages/clients/ClientCreate.jsx';
 import ClientEdit from './pages/clients/ClientEdit.jsx';
