@@ -43,7 +43,7 @@ function Sidebar() {
         <li className="text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-2">
           <i className="fa-solid fa-truck"></i>
           <span className={`${!open && 'hidden'} origin-left duration-200`}>
-            <a href="/clients">
+            <a href="/services">
               Services
             </a>
           </span></li>

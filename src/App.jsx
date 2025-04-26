@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from './components/Sidebar.jsx'
 import ClientList from './pages/clients/ClientList.jsx'
+import ServiceList from './pages/services/service.jsx';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path='/clients' element={<ClientList />} />
             {/* <Route path='/' element={<ClientList />}/> */}
+            <Route path='/services' element={<ServiceList />} />
           </Routes>
         </div>
       </div>
