@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; // Si tu utilises React Router
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Client.css";
-import { useNavigate } from "react-router-dom";
 
 function ClientEdit() {
-  const { id } = useParams(); 
+  const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nom: "",
@@ -14,7 +12,6 @@ function ClientEdit() {
     points_fidelite: 0,
   });
 
-  // Charger les données du client
   useEffect(() => {
     axios.get(`http://localhost:8000/api/clients/${id}/`)
       .then((response) => {
@@ -29,15 +26,14 @@ function ClientEdit() {
     const { name, value } = event.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: name === "points_fidelite" ? Number(value) : value,
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.put(`http://localhost:8000/api/clients/${id}/`, formData)
-      .then((response) => {
-        console.log("Client mis à jour avec succès:", response);
+      .then(() => {
         navigate("/clients");
       })
       .catch((error) => {
@@ -46,78 +42,83 @@ function ClientEdit() {
   };
 
   return (
-    <div className="w-full flex justify-center text-white py-8">
-      <form className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-lg">
-        <h2 className="text-center text-xl font-semibold mb-4">Modifier un client</h2>
+    <div className="min-h-screen bg-black flex items-center justify-center p-6">
+      <form onSubmit={handleSubmit} className="bg-gray-900 p-10 rounded-2xl shadow-lg w-full max-w-2xl">
+        
+        <h2 className="text-2xl font-bold text-center text-white mb-8">Modifier un Client</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1" htmlFor="nom">
-              Nom
-            </label>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-base">
+          <div className="flex flex-col">
+            <label htmlFor="nom" className="text-gray-300 mb-2 text-2xl">Nom</label>
             <input
-              name="nom"
-              id="nom"
               type="text"
-              placeholder="Entrez votre nom"
-              className="w-full px-3 py-2 text-base border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="nom"
+              name="nom"
               value={formData.nom}
               onChange={handleChange}
+              placeholder="Entrez votre nom"
+              className="px-4 py-4 rounded-lg bg-black border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
           </div>
 
-          <div>
-            <label className="block text-sm font-medium mb-1" htmlFor="email">
-              Email
-            </label>
+          <div className="flex flex-col">
+            <label htmlFor="email" className="text-gray-300 mb-2 text-2xl">Email</label>
             <input
-              name="email"
-              id="email"
               type="email"
-              placeholder="Entrez votre email"
-              className="w-full px-3 py-2 text-base border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="email"
+              name="email"
               value={formData.email}
               onChange={handleChange}
+              placeholder="Entrez votre email"
+              className="px-4 py-4 rounded-lg bg-black border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
           </div>
 
-          <div>
-            <label className="block text-sm font-medium mb-1" htmlFor="telephone">
-              Téléphone
-            </label>
+          <div className="flex flex-col">
+            <label htmlFor="telephone" className="text-gray-300 mb-2 text-2xl">Téléphone</label>
             <input
-              name="telephone"
-              id="telephone"
               type="text"
-              placeholder="Entrez votre téléphone"
-              className="w-full px-3 py-2 text-base border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="telephone"
+              name="telephone"
               value={formData.telephone}
               onChange={handleChange}
+              placeholder="Entrez votre téléphone"
+              className="px-4 py-4 rounded-lg bg-black border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
           </div>
 
-          <div>
-            <label className="block text-sm font-medium mb-1" htmlFor="points_fidelite">
-              Points de fidélité
-            </label>
+          <div className="flex flex-col">
+            <label htmlFor="points_fidelite" className="text-gray-300 mb-2 text-2xl">Points de fidélité</label>
             <input
-              name="points_fidelite"
-              id="points_fidelite"
               type="number"
-              className="w-full px-3 py-2 text-base border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="points_fidelite"
+              name="points_fidelite"
               value={formData.points_fidelite}
-              onChange={handleChange}
+              readOnly
+              className="px-4 py-4 rounded-lg bg-gray-800 border border-gray-700 text-gray-400 focus:outline-none cursor-not-allowed"
             />
           </div>
         </div>
 
-        <button
-          onClick={handleSubmit}
-          className="w-full text-base mt-4 bg-blue-700 hover:bg-blue-500 transition duration-300 text-white font-bold py-2 px-4 rounded-lg"
-          type="button"
-        >
-          Mettre à jour
-        </button>
+        {/* Groupe des boutons sur la même ligne */}
+        <div className="flex justify-between mt-10 space-x-4">
+          <button
+            type="submit"
+            className="w-1/2 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition duration-300 text-base"
+          >
+            Mettre à jour
+          </button>
+          <button
+            type="button"
+            onClick={() => navigate("/clients")}
+            className="w-1/2 py-3 bg-gray-600 hover:bg-gray-700 text-white font-bold rounded-lg transition duration-300 text-base"
+          >
+            Retour
+          </button>
+        </div>
       </form>
     </div>
   );
