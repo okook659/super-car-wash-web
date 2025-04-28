@@ -40,8 +40,6 @@ function ServiceList() {
                     <tr className="table-row">
                         <th className='p-3 font-semibold table-cell border b-1'>Nom</th>
                         <th className='p-3 font-semibold table-cell border b-1'>Description</th>
-                        <th className='p-3 font-semibold table-cell border b-1'>Prix</th>
-                        <th className='p-3 font-semibold table-cell border b-1'>Type de véhicule</th>
                         <th className='p-3 font-semibold table-cell border b-1'>Actions</th>
                     </tr>
                 </thead>
@@ -50,8 +48,6 @@ function ServiceList() {
                         <tr className="table-row" key={service.id}>
                             <td className='p-3 text-white table-cell text-center border b-1'>{service.nom}</td>
                             <td className='p-3 text-white table-cell text-center border b-1'>{service.description}</td>
-                            <td className='p-3 text-white table-cell text-center border b-1'>{service.prix}</td>
-                            <td className='p-3 text-white table-cell text-center border b-1'>{service.type_vehicule}</td>
                             <td className='p-3 text-white table-cell text-center border b-1'>
                                 <div className="flex text-center justify-center">
                                     <a href={`/services/edit/${service.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2">
