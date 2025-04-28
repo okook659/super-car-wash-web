@@ -27,7 +27,7 @@ function ClientList() {
        }
     }
     return (
-        <div className='text-white p-5 h-screen'>
+        <div className='text-white p-5 h-screen bg-black'>
             <h1 className='text-3xl mb-6'>Liste des clients</h1>
             <a href='/clients/create' className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-lg mb-3">
                 Ajouter 

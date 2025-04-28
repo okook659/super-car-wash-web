@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-
-
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
   const [open, setOpen] = useState(true);
- 
+
   return (
     <div className={`${open ? "w-72" : "w-20"} 
       duration-300
@@ -36,24 +35,36 @@ function Sidebar() {
         <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-2">
           <i className="fa-solid fa-handshake"></i>
           <span className={`${!open && 'hidden'} origin-left duration-200`}>
-            <a href="/clients">
+            <a href="/rendezvous">
               Rendez-vous
             </a>
-          </span></li>
+          </span>
+        </li>
         <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-2">
           <i className="fa-solid fa-truck"></i>
           <span className={`${!open && 'hidden'} origin-left duration-200`}>
             <a href="/services">
               Services
             </a>
-          </span></li>
+          </span>
+        </li>
         <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-2">
           <i className="fa-solid fa-chart-simple"></i>
           <span className={`${!open && 'hidden'} origin-left duration-200`}>
             <a href="/clients">
               Graphique
             </a>
-          </span></li>
+          </span>
+        </li>
+        <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-9">
+          <i className="fa-solid fa-tag"></i>
+          <span className={`${!open && 'hidden'} origin-left duration-200`}>
+            <a href="/tarifications">
+              Tarifs
+            </a>
+          </span>
+        </li>
+
         <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-9">
           <i className="fa-solid fa-door-open"></i>
           <span className={`${!open && 'hidden'} origin-left duration-200`}>
@@ -67,4 +78,4 @@ function Sidebar() {
   )
 }
 
-export default Sidebar
+export default Sidebar;

@@ -1,0 +1,57 @@
+.dashboard-calendar-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: #f8f9fc;
+    min-height: 100vh;
+  }
+  
+  .calendar-main {
+    flex: 3;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .calendar-sidebar {
+    flex: 1;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .calendar-sidebar h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .calendar-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .calendar-sidebar li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #4b5563;
+  }
+  .fc .fc-toolbar-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .fc .fc-button {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .fc-daygrid-day-number {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #4b5563;
+  }
+  
