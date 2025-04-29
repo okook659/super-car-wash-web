@@ -1,4 +1,3 @@
-import './App.css'
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Sidebar from './components/Sidebar.jsx'
 import ServiceList from './pages/services/service.jsx';

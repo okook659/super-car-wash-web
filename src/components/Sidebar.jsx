@@ -6,7 +6,7 @@ function Sidebar() {
 
   return (
     <div className={`${open ? "w-72" : "w-20"} 
-      duration-300
+      duration-300 
       h-screen p-5 pt-8 bg-blue-900 relative`}>
     
       <i className={`fa-solid fa-circle-left fa-2x text-white text-lg absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple rounded-full ${!open && "rotate-180"}`} onClick={() => setOpen(!open)}></i>

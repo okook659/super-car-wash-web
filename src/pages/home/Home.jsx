@@ -8,7 +8,13 @@ function Home() {
                 <Navbar />
                 <div className="header-content">
                     <span>Bienvenue à Super Car Wash</span>
-                    <img id="header-content-image" src={car3} alt="Voiture propre" />
+                    <div class="box">
+                        <div className="content">
+                            <img src={car3} alt="Voiture propre" />
+                            <h2>Super Car Wash <br /> <span>Manage your business</span> </h2>
+                            <a href="#">Start now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
