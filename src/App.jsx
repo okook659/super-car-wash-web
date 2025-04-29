@@ -12,6 +12,7 @@ import RendezVousCalendar from './pages/rendezvous/RendezVousCalendar.jsx';
 import RendezVousForm from './pages/rendezvous/RendezVousForm.jsx';
 import Login from './pages/Login.jsx';
 import Home from './pages/home/Home.jsx';
+import Graph from './pages/grahs/Graph.jsx';
 
 function AppContent() {
   const location = useLocation();
@@ -38,6 +39,7 @@ function AppContent() {
           <Route path='/tarifications/create' element={<ServiceTarificationCreate />} />
           <Route path='/rendezvous' element={<RendezVousCalendar />} />
           <Route path='/rendezvous/create' element={<RendezVousForm />} />
+          <Route path='/graph' element={<Graph />} />
         </Routes>
       </div>
     </div>

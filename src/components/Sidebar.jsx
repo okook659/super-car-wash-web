@@ -51,7 +51,7 @@ function Sidebar() {
         <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-2">
           <i className="fa-solid fa-chart-simple"></i>
           <span className={`${!open && 'hidden'} origin-left duration-200`}>
-            <a href="/clients">
+            <a href="/graph">
               Graphique
             </a>
           </span>
