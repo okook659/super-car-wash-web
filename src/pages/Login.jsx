@@ -61,7 +61,7 @@ function Login() {
           {error && <p className="text-red-500 mb-4">{error}</p>}
 
           <div className="mb-4">
-            <label htmlFor="username" className="block text-lg font-medium">Nom d'utilisateur</label>
+            <label htmlFor="username" className="">Nom d'utilisateur</label>
             <div className="input-wrapper mt-2">
               <input
                 type="text"
@@ -69,13 +69,13 @@ function Login() {
                 name="username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className=""
               />
             </div>
           </div>
 
           <div className="mb-4">
-            <label htmlFor="password" className="block text-lg font-medium">Mot de passe</label>
+            <label htmlFor="password" className="">Mot de passe</label>
             <div className="input-wrapper mt-2">
               <input
                 type="password"
@@ -83,13 +83,13 @@ function Login() {
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className=""
               />
             </div>
           </div>
 
           <div className="button-wrapper mt-6">
-            <button type="submit" className="w-full p-3 bg-blue-600 text-white rounded-md hover:bg-blue-700">Se connecter</button>
+            <button type="submit" className="">Se connecter</button>
           </div>
         </form>
       </div>

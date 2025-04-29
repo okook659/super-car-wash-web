@@ -3,20 +3,23 @@
     color: #fff;
     display: flex;
     justify-content: space-around;
-    font-size: 0.5em;
+    font-size: 0.75em;
     text-align: center;
     align-items: center;
 }
 
-.nav-bar span{
-    font-size: large;
-}
+
 
 .btn{
     padding: 0.5em 1em;
     background-color: white;
     color: #000;
     border-radius: 0.5em;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    letter-spacing: 0.2em;
 }
 
 .navbar-links ul{
