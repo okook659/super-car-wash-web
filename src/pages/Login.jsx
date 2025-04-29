@@ -27,8 +27,19 @@ function Login() {
         // Sauvegarde du token dans localStorage
         localStorage.setItem('token', response.data.token);
 
-        // Redirection vers la page d'accueil (par exemple '/clients')
-        navigate('/clients');
+        // Récupérer le rôle de l'utilisateur depuis la réponse
+        const role = response.data.user.role;
+
+
+        console.log('Login success:', response.data);
+
+        // Redirection vers la page de réservation si l'utilisateur est un client
+        if (role === 'client') {
+          navigate('/');
+        } else {
+          navigate('/clients');
+        }
+        
       }
     } catch (error) {
       // Si une erreur se produit, afficher un message d'erreur

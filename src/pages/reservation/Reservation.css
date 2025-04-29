@@ -1,0 +1,74 @@
+/* Réglage global du conteneur du formulaire */
+.reservation-form {
+    max-width: 90%;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 0px; /* Coins nets */
+    border: 1px solid #ccc;
+    box-shadow: none; /* Pas d'effet d'ombre */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Titre */
+.reservation-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Message de retour */
+.reservation-form p {
+    text-align: center;
+    font-weight: 500;
+    color: green;
+    margin-bottom: 20px;
+}
+
+/* Champs de formulaire */
+.reservation-form form > div {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Libellé */
+.reservation-form label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* Champs (input, select) */
+.reservation-form input,
+.reservation-form select {
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px; /* coins carrés */
+    background-color: #fff;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus {
+    border-color: #555;
+}
+
+/* Bouton */
+.reservation-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reservation-form button:hover {
+    background-color: #0056b3;
+}
