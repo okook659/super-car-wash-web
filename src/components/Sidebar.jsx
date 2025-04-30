@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Sidebar.css'
 
 function Sidebar() {
   const [open, setOpen] = useState(true);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <div className={`${open ? "w-72" : "w-20"} 
+    <div id='sidebar' className={`${open ? "w-72" : "w-20"} 
       duration-300 
-      h-screen p-5 pt-8 bg-blue-900 relative`}>
+      h-screen p-5 pt-8 bg-blue-900 relative fixed`}>
     
       <i className={`fa-solid fa-circle-left fa-2x text-white text-lg absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple rounded-full ${!open && "rotate-180"}`} onClick={() => setOpen(!open)}></i>
       <div className='flex gap-x-4 items-center'>
@@ -16,27 +18,37 @@ function Sidebar() {
         <h1 className={`text-white origin-left font-medium text-xl duration-300 ${!open && "scale-0"}`}>Super car wash</h1>
       </div>
       <ul className='pt-6'>
-        <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md">
-          <i className="fa-solid fa-house"></i>
+      <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-2" onClick={() => setDropdownOpen(!dropdownOpen)}>
+          <i className="fa-solid fa-chart-simple"></i>
           <span className={`${!open && 'hidden'} origin-left duration-200`}>
-            <a href="/clients">
-              Accueil
-            </a>
+            Statistiques
           </span>
+          <i className={`fa-solid fa-chevron-down ${dropdownOpen ? 'rotate-180' : ''} duration-200`}></i>
         </li>
+        {dropdownOpen && (
+          <ul className="pl-8">
+             <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-2">
+              <span className={`${!open && 'hidden'} origin-left duration-200`}>
+                <Link to="/graph">Graphes</Link>
+              </span>
+            </li>
+            <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-2">
+              <span className={`${!open && 'hidden'} origin-left duration-200`}>
+                <Link to="/top_clients">Top Clients</Link>
+              </span>
+            </li>
+            <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-2">
+              <span className={`${!open && 'hidden'} origin-left duration-200`}>
+                <Link to="/top_services">Top Services</Link>
+              </span>
+            </li>
+          </ul>
+        )}
         <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-9">
           <i className="fa-solid fa-user"></i>
           <span className={`${!open && 'hidden'} origin-left duration-200`}>
             <a href="/clients">
               Clients
-            </a>
-          </span>
-        </li>
-        <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-2">
-          <i className="fa-solid fa-handshake"></i>
-          <span className={`${!open && 'hidden'} origin-left duration-200`}>
-            <a href="/rendezvous">
-              Rendez-vous
             </a>
           </span>
         </li>
@@ -49,13 +61,13 @@ function Sidebar() {
           </span>
         </li>
         <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-2">
-          <i className="fa-solid fa-chart-simple"></i>
+          <i className="fa-solid fa-handshake"></i>
           <span className={`${!open && 'hidden'} origin-left duration-200`}>
-            <a href="/graph">
-              Graphique
+            <a href="/rendezvous">
+              Rendez-vous
             </a>
           </span>
-        </li>
+        </li>      
         <li className="text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-9">
           <i className="fa-solid fa-tag"></i>
           <span className={`${!open && 'hidden'} origin-left duration-200`}>

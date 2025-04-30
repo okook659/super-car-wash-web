@@ -31,7 +31,7 @@ function ClientCreate() {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-6">
+    <div className="bg-black flex items-center justify-center p-6">
       <form onSubmit={handleSubmit} className="bg-gray-900 p-10 rounded-2xl shadow-lg w-full max-w-2xl">
         
         <h2 className="text-2xl font-bold text-center text-white mb-8">Ajouter un Client</h2>

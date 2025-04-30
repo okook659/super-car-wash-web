@@ -1,0 +1,12 @@
+#app-content {
+    overflow: scroll;
+}
+
+#content {
+    height: 100vh;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

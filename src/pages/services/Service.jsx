@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import './Service.css'
 import { useNavigate } from 'react-router';
+import '../../components/table.css'
 
 function ServiceList() {
     const [services, setServices] = useState([]);
@@ -30,7 +31,7 @@ function ServiceList() {
     }
 
     return (
-        <div className='text-white p-5 h-screen bg-black'>
+        <div className='text-white p-5'>
             <h1 className='text-3xl mb-6'>Liste des services</h1>
             <a href='/services/create' className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-lg mb-3 inline-block">
                 Ajouter
@@ -46,9 +47,9 @@ function ServiceList() {
                 <tbody className=''>
                     {services.map((service) => (
                         <tr className="table-row" key={service.id}>
-                            <td className='p-3 text-white table-cell text-center border b-1'>{service.nom}</td>
-                            <td className='p-3 text-white table-cell text-center border b-1'>{service.description}</td>
-                            <td className='p-3 text-white table-cell text-center border b-1'>
+                            <td className='p-3 table-cell text-center border b-1'>{service.nom}</td>
+                            <td className='p-3 table-cell text-center border b-1'>{service.description}</td>
+                            <td className='p-3 table-cell text-center border b-1'>
                                 <div className="flex text-center justify-center">
                                     <a href={`/services/edit/${service.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2">
                                         <i className="fa-solid fa-pen-to-square" title="Modifier"></i>

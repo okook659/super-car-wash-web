@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import './Client.css'
+import '../../components/table.css'
 import { useNavigate } from 'react-router';
 
 function ClientList() {
@@ -27,7 +28,7 @@ function ClientList() {
        }
     }
     return (
-        <div className='text-white p-5 h-screen'>
+        <div className='text-white p-5'>
             <h1 className='text-3xl mb-6'>Liste des clients</h1>
             <a href='/clients/create' className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-lg mb-3">
                 Ajouter 
@@ -46,11 +47,11 @@ function ClientList() {
                         {clients.map(function (client) {
                         return (
                                 <tr className="table-row" key={client.id}>
-                                    <td className='p-3 text-white table-cell text-center border b-1'> {client.nom} </td>
-                                    <td className='p-3 text-white table-cell text-center border b-1'> {client.telephone} </td>
-                                    <td className='p-3 text-white table-cell text-center border b-1'> {client.email} </td>
-                                    <td className='p-3 text-white table-cell text-center border b-1'> {client.points_fidelite} </td>
-                                    <td className='p-3 text-white table-cell text-center border b-1'> 
+                                    <td className='p-3 table-cell text-center border b-1'> {client.nom} </td>
+                                    <td className='p-3 table-cell text-center border b-1'> {client.telephone} </td>
+                                    <td className='p-3 table-cell text-center border b-1'> {client.email} </td>
+                                    <td className='p-3 table-cell text-center border b-1'> {client.points_fidelite} </td>
+                                    <td className='p-3 table-cell text-center border b-1'> 
                                         <div className="flex text-center justify-center">
                                             
                                             <a href={`/clients/edit/${client.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2">

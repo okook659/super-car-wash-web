@@ -13,8 +13,12 @@ import RendezVousForm from './pages/rendezvous/RendezVousForm.jsx';
 import Login from './pages/Login.jsx';
 import Home from './pages/home/Home.jsx';
 import Graph from './pages/grahs/Graph.jsx';
+import TopClients from './pages/grahs/TopClients.jsx';
+import TopServices from './pages/grahs/TopServices.jsx';
 import Register from './pages/register.jsx';
 import Reservation from './pages/reservation/Reservation.jsx';
+import RevenuParService from "./pages/grahs/RevenuParService.jsx";
+import './App.css'
 
 function AppContent() {
   const location = useLocation();
@@ -25,15 +29,14 @@ function AppContent() {
   const shouldHideSidebar = hideSidebarRoutes.includes(location.pathname);
 
   return (
-    <div className='flex'>
+    <div className='flex' id="app-content">
       {!shouldHideSidebar && <Sidebar />}
-      <div className='p-7 text-2xl font-semibold flex-1 h-screen'>
+      <div className='p-7 text-2xl font-semibold flex-1' id="content">
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/' element={<Home />} /> 
-          <Route path='/reservation' element={<Reservation />} /> 
-          
+          <Route path='/reservation' element={<Reservation />} />  
           <Route path='/clients' element={<ClientList />} />
           <Route path='/clients/create' element={<ClientCreate />} />
           <Route path='/clients/edit/:id' element={<ClientEdit />} />
@@ -45,6 +48,9 @@ function AppContent() {
           <Route path='/rendezvous' element={<RendezVousCalendar />} />
           <Route path='/rendezvous/create' element={<RendezVousForm />} />
           <Route path='/graph' element={<Graph />} />
+          <Route path='/top_clients' element={<TopClients />} />
+          <Route path='/top_services' element={<TopServices />} />
+          <Route path='/revenus_par_service' element={<RevenuParService />} />
         </Routes>
       </div>
     </div>
